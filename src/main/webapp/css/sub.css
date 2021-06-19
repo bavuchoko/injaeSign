@@ -1,0 +1,359 @@
+.h1, .h2, .h3, h1, h2, h3 {
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
+
+ol, ul, li {
+    list-style-type: none;
+}
+#righter {
+	overflow:scroll;
+}
+#righter::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #ffffff; /*�뒪�겕濡ㅻ컮�쓽 �꼫鍮�*/
+}
+#righter::-webkit-scrollbar-thumb {
+    border-radius: 3.5px;
+    background-color: #2e3949; /*�뒪�겕濡ㅻ컮�쓽 �깋�긽*/
+}
+ #righter::-webkit-scrollbar-track {
+     background: #ffffff; /*�뒪�겕濡ㅻ컮 �듃�옓 �깋�긽*/
+}
+.LocalHeader {
+	overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+    height: 60px;
+    min-width: 700px;
+    padding: 18px 24px;
+    position: relative;
+}
+.LocalHeader-title {
+	font-weight:600;
+    float: left;
+    line-height: 1;
+    margin-right: 6px;
+	font-size:21px;
+	color:#292929;
+}
+.Main-container{
+	width:100%;
+	margin-left: auto;
+    margin-right: auto;
+    padding: 12px 12px 0;
+}
+.documents{
+	padding: 12px 24px;
+    position: relative;
+}
+.ToolBar {
+    margin-bottom: 12px;
+    text-align: right;
+    white-space: nowrap;
+}
+.ToolBar:after{clear:both;}
+.documents-select{
+	width:100px;
+}
+.selectBox{
+	color: #292929;
+	 border: 0;
+  width: 100%;
+  padding: 10px 10px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px transparent, inset 1px 1px 1px 0 #d2d2d2, inset -1px -1px 0 0 #e1e1e1;
+  color: #292929;
+    width: 100%;
+	float:left;
+	margin-right:10px;
+}
+
+.title-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+ }
+
+.field-container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 330px;
+  height: 40px;
+}
+.field {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px transparent, inset 1px 1px 1px 0 #d2d2d2, inset -1px -1px 0 0 #e1e1e1;
+  color: #292929;
+}
+.DocumentListHeader {
+    border-bottom: 2px solid #e1e1e1;
+    color: #9e9e9e;
+    font-size: 13px;
+    padding: 16px 0;
+    text-align: left;
+}
+.DocumentListHeader-checkbox {
+    width: 47px;
+}
+.CheckBox {
+    cursor: pointer;
+    height: 16px;
+    overflow: hidden;
+    position: relative;
+    width: 16px;
+	display: table-cell;
+    vertical-align: middle;
+}
+input[id="DocumentCheckbox"]:checked + label {
+	background-color: #2e3949;
+}
+input[id="DocumentCheckbox"] + label {
+	background: #eee;
+    border: 1px solid #e1e1e1;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+	height: 16px;
+	width: 16px;
+	border-radius: 2px;
+	
+}
+input[id="DocumentCheckbox"] {
+	display: none;
+}
+.checkbox label, .radio label {
+    min-height: 16px;
+    padding-left: 15px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+.CheckBox-custom {
+    background: #eee;
+    border: 1px solid #e1e1e1;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+	height: 16px;
+	width: 16px;
+	border-radius: 2px;
+}
+.DocumentListHeader-checkbox{
+	float: left;
+    padding: 0 12px;
+}
+.DocumentListHeader-writer{
+	padding-left: 0;
+	margin-left: 30px;
+    width: 200px;
+	float: left;
+    padding: 0 12px;
+}
+.DocumentListHeader-title{
+	float: left;
+    max-width: calc(100% - 547px);
+    padding: 0 12px 0 20px;
+    width: 100%;
+}
+.DocumentListHeader-file{
+	float: left;
+    padding: 0 12px;
+}
+.DocumentListHeader:after {
+    clear: both;
+}
+.DocumentsEmptyList{
+	padding: 80px 0 20px 0;
+    text-align: center;
+}
+.DocumentsEmptyList img{
+	margin-bottom: 20px;
+}
+.DocumentsEmptyList p{
+	font-size:14px;
+	color:#9e9e9e;
+}
+.DocumentsPaging{
+	margin-bottom:50px;
+	text-align: center;
+	clear:both;
+}
+.panel-list-head{
+	margin-left:0px;
+	background: #fff;
+    -webkit-box-shadow: 0 0 40px -5px #e1e1e1, 0 -1px 0 0 #e1e1e1, -1px 0 0 0 #e1e1e1, 1px 0 0 0 #e1e1e1;
+    box-shadow: 0 0 40px -5px #e1e1e1, 0 -1px 0 0 #e1e1e1, -1px 0 0 0 #e1e1e1, 1px 0 0 0 #e1e1e1;
+	width: 100%;
+    height: 68px;
+}
+.DocumentListItem-checkbox, .DocumentListItem-writer, .DocumentListItem-title, .DocumentListItem-file{
+	float: left;
+    font-size: .98em;
+    padding: 26px 12px;
+    text-align: left;
+}
+.DocumentListItem-checkbox{
+	float: left;
+    padding: 26px 12px;
+}
+.DocumentListItem-writer{
+	padding-left: 0;
+	margin-left: 30px;
+    width: 200px;
+	float: left;
+    padding: 11px 12px;
+}
+.panel-list-head:hover{background:#f6faff;}
+.DocumentListItem-title{
+	float: left;
+    max-width: calc(100% - 547px);
+    padding: 15px 20px;
+    width: 100%;
+}
+.DocumentListItem-title p{font-size:14px;}
+.DocumentListItem-title span{font-size:13px;}
+.DocumentListItem-file{
+	float: left;
+	width:auto;
+    padding: 24px 12px;
+	margin-left: 12px;
+}
+.DocumentList-li:after {
+    clear: both;
+}
+.member-writer{
+	float:left;
+	border-radius: 25px;
+   
+    width: 40px;
+    height: 40px;
+    margin-top: 6px;
+	margin-right: 20px;
+    margin-left: 5px;
+}
+
+.member-writer img{
+	height: 40px;
+	width: 40px;
+	border-radius: 25px !important;
+}
+.member-box{
+	float:left;
+}
+.DocumentListInfo-writer{
+	height: 70px;
+}
+/* .DocumentListInfo-writer div:first-child:after{
+	content:"";
+	display:block;
+	clear:both;
+} */
+
+.DocumentListInfo-writer > div:last-child{
+	/* float:left; */
+	padding-top:20px;
+	padding-left:100px;
+}
+.member-writer-textb, .member-writer-textp{
+	font-size: 12px;
+    margin: 5px 10px 0px 2px;
+}
+.member-writer-textb{
+	margin-top:9px;
+}
+
+
+.panel-list-collapse{
+	float:left;
+}
+.panel-list-collapse{width:100%;padding: 10px 81px;}
+.Document-state-progress{
+	background: #4a98ff;
+    color: #fff;
+    font-weight: 500;
+	border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    margin-left: 6px;
+    padding: 1px 6px 2px;
+}
+.Document-state-stand{
+	border: 1px solid #9e9e9e;
+    color: #757575;
+	border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    margin-left: 6px;
+    padding: 1px 6px 2px;
+}
+
+.Document-state-rejected{
+    border: 1px solid #9e9e9e;
+    color: white;
+    background-color: darkred ;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    margin-left: 6px;
+    padding: 1px 6px 2px;
+}
+.Document-menu{
+	border: 2px solid #e1e1e1;
+	border-radius:3px;
+    color: #616161;
+	padding: 20px 15px;
+}
+.Document-menu:last-child{
+	margin-top: 10px;
+}
+.Document-menu i{
+    color: #ffb600;
+    font-size: 17px;
+	line-height: 0;
+    margin-right: 6px;
+    text-align: center;
+    vertical-align: middle;
+    width: 15px;
+}
+.Document-menu:hover {
+    background: #dcdcdc;
+    color: #424242;
+}
+.DocumentListInfo-title{
+	font-size:16px;
+	font-weight:600;
+	margin-bottom: 12px;
+    margin-left: 3px;
+    margin-top: 0;
+}
+.panel-list-collapse {
+    background: #fafafa;
+    border-top: 1px solid #e4e4e4;
+    -webkit-box-shadow: 0 1px 0 0 #d2d2d2, 1px 0 0 0 #e1e1e1, -1px 0 0 0 #e1e1e1, 0 40px 60px -30px rgb(0 0 0 / 0%);
+    box-shadow: 0 1px 0 0 #d2d2d2, 1px 0 0 0 #e1e1e1, -1px 0 0 0 #e1e1e1, 0 40px 60px -30px rgb(0 0 0 / 0%);
+    padding-bottom: 0;
+    position: relative;
+}
+.Document-state-needsign{
+	color: #4a98ff;
+    font-weight: 700;
+}
+.DocumentList-li{
+	display: flow-root;
+}
+.field-container i{
+	margin-left:5px;
+	font-size:20px;
+	color:#9e9e9e;
+}

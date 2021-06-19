@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.example.demo.dao.user.UserMapper">
+  
+	  <insert id="insertUser" parameterType="UserVO">
+	  	insert into user (id, pw) values (#{id},#{pw}) 
+	  </insert>
+	  
+	  <select id="selectUserList" resultType="UserVO">
+	  	select * from user
+	  </select>
+	  
+	  <!-- 이명우 -->
+	  <select id="userlogin" resultType="UserVO">
+	  	select * from user where email=#{email} and pw=#{pw}
+	  </select>
+	  
+	  <select id="getUserVO" resultType="UserVO" >
+	  	select * from user where s_num=#{s_num}
+	  </select>
+	  
+	  <update id="changeUserPw">
+	  	update user set pw=#{newpw} where s_num=#{s_num2} and pw=#{expw}
+	  </update>
+	  
+	  <update id="changeUserInfo">
+	  	update user set phone=#{vo.phone}, zip_code=#{vo.zip_code}, address=#{vo.address}, address_detail=#{vo.address_detail} 
+	  	where s_num =#{s_num2}
+	  </update>
+	  
+	  <!-- 최영제 -->
+     <insert id="insertSign" parameterType="SignVO">
+         insert into sign(s_num, sign, sign_path) values(#{s_num}, #{sign}, #{sign_path})
+      </insert>
+  
+       <insert id="insertStamp" parameterType="SignVO">
+         insert into sign(s_num, stamp, sign_path) values(#{s_num}, #{stamp}, #{sign_path})
+      </insert>
+      
+      <update id="updateSign">
+         update sign set sign = #{sign} where s_num = #{s_num}
+      </update>
+      
+      <update id="updateStamp">
+         update sign set stamp = #{stamp} where s_num = #{s_num}
+      </update>
+      
+      <select id="checkSign" resultType="_int">
+         select count(sign) from sign where s_num = #{s_num}
+      </select>
+      
+      <select id="checkStamp" resultType="_int">
+         select count(stamp) from sign where s_num = #{s_num}
+      </select>      
+      
+     <select id="getSign" resultType="SignVO">
+        select * from sign where s_num = #{s_num}
+     </select>
+      
+      <update id="signDelete">
+            update sign set sign = 1 where s_num = #{s_num}
+      </update>
+      
+      <update id="stampDelete">
+            update sign set stamp = 1 where s_num = #{s_num}
+      </update>
+     
+     <select id="getUserdep" resultType="UserVO" >
+         select * from user where department_name=#{department_name}
+      </select> 
+      
+     <select id="getUserSign" resultType="String">
+		select sign from sign where s_num = #{s_num}
+	</select>
+	<select id="getUserStamp" resultType="String">
+		select stamp from sign where s_num = #{s_num}
+	</select>
+  </mapper>

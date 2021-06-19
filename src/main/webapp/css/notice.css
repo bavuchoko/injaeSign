@@ -1,0 +1,290 @@
+/*--------------------------------------------------------------
+# notice
+--------------------------------------------------------------*/
+
+#noticeSearch a{display: inline-flex; width:40px; height:40px; border-radius: 50%;}
+
+.notice-header .count{
+    display: inline-block;
+    margin-top: 18px;
+}
+
+#noticeSearch select{
+    color: #292929;
+    border: 0;
+    padding: 10px 10px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px transparent, inset 1px 1px 1px 0 #d2d2d2, inset -1px -1px 0 0 #e1e1e1;
+    color: #292929;
+    float: left;
+    margin-right: 10px;
+}
+
+#noticeSearch select:focus{
+    outline: none;
+}
+
+#noticeSearch input[type="text"]{
+    border: 0;
+    width:300px;
+    height: 40px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px transparent, inset 1px 1px 1px 0 #d2d2d2, inset -1px -1px 0 0 #e1e1e1;
+    color: #292929;
+}
+#noticeSearch input[type="text"]:focus{
+    outline: none;
+    font-size: 17px;
+}
+
+#noticeSearch input[type="text"]::placeholder{
+    font-size: 17px;
+}
+
+.notice-header a{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 40px;
+    width: 96px;
+    height: 40px;
+    margin-top: 2px;
+    color: #040b14;
+    font-weight: bold;
+    font-size: 14px;
+    background: #ffcd20;
+    border-color: #dbaf11;
+}
+
+.notice-header a:hover{
+    text-decoration:none;
+}
+
+#notice{
+    max-width: 1170px;;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.notice-header span{
+    color: #ffcd20;
+}
+
+.notice-header div:nth-child(1){
+    font-size: 16px;
+}
+
+.notice-header div:nth-child(2){
+    display: flex;
+}
+
+.notice-header{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 25px;
+   padding: 0 10px;
+}
+
+#notice table{
+    width: 100%;
+    border-top: 1px solid #000;
+}
+
+#notice tr{
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+#notice th, td{
+    text-align: center;
+}
+
+#notice thead{
+    background: #f6f6f6;
+}
+
+#notice table .title:hover {
+    text-decoration: underline;
+}
+
+nav .pagination a{
+	color:#111 !important;
+}
+
+/*--------------------------------------------------------------
+# notice_View
+--------------------------------------------------------------*/
+.noticeViewWrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.noticeViewWrapper h1{
+	text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.noticeViewWrapper .dataInfo{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.noticeViewWrapper .content{
+    padding-bottom: 35px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.noticeViewWrapper .content .noticeViewfile{
+    padding-bottom: 15px;
+    
+}
+
+.noticeViewWrapper .writer{
+    padding-right: 10px;
+    border-right: 1px solid #dbdbdb;
+    color: #888;
+}
+
+.noticeViewWrapper .date{
+    padding-left: 5px;
+    color: #888;
+}
+
+.noticeView_btnGroup{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.noticeView_btnGroup a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 120px;
+    background: #ffcd20;
+    color: #040b14;
+    margin-right: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# notice_Write_Modify
+--------------------------------------------------------------*/
+#noticeWrite{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#noticeWrite table th td{
+    border-collapse : collapse;
+    vertical-align: center;
+}
+#noticeWrite table{
+    width: 100%;
+    border-top: 1px solid #dbdbdb;
+}
+
+#noticeWrite table tr{
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#noticeWrite table th{
+    text-align: center;
+    background: #f7f8fc;
+    width: 15%;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align:middle;
+}
+
+#noticeWrite table td{
+    padding: 10px;
+}
+
+#noticeWrite .noticeWriteTitle{
+    width: 100%;
+    font-size: 16px;
+}
+
+.content{
+    resize: none;
+    width: 100%;
+    font-size: 14px;
+}
+
+.content_notice_write{
+	height:300px;
+	resize: none;
+    width: 100%;
+}
+
+#noticeWrite .btngroup{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#noticeWrite .btngroup a{
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    margin-right: 8px;
+}
+
+.text-right{
+   width: 260px;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notice-write-btn{
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
+   border-radius: 40px; 
+   width: 96px; 
+   height: 40px; 
+   margin-top: 2px; 
+   color: #040b14; 
+   font-weight: bold; 
+   font-size: 14px; 
+   background: #ffcd20; 
+   border-color: #dbaf11; 
+   float: right;
+}
+
+.notice-write-btn:hover{
+   background-color: #ffdf72;
+    border: 1px solid #ffdc62;
+}
+
+.back-btn{
+    margin-top:30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 120px;
+    border:2px solid #ffcd20;
+    color: #040b14;
+    margin-right: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.content-main{
+	clear: both;
+}

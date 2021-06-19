@@ -1,0 +1,185 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.signature-pad {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  max-width: 700px;
+  max-height: 460px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.signature-pad::before,
+.signature-pad::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 40%;
+  height: 10px;
+  bottom: 10px;
+  background: transparent;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.signature-pad::before {
+  left: 20px;
+  -webkit-transform: skew(-3deg) rotate(-3deg);
+          transform: skew(-3deg) rotate(-3deg);
+}
+
+.signature-pad::after {
+  right: 20px;
+  -webkit-transform: skew(3deg) rotate(3deg);
+          transform: skew(3deg) rotate(3deg);
+}
+
+.signature-pad--body {
+	height : 600px;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+  border: 1px solid #f4f4f4;
+}
+
+.signature-pad--body
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
+}
+
+.signature-pad--footer {
+  color: #C3C3C3;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 8px;
+}
+
+.signature-pad--actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 8px;
+}
+
+#github img {
+  border: 0;
+}
+
+@media (max-width: 940px) {
+  #github img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+
+#padDimA{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    z-index: 900;
+}
+
+#padDimB{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,.8);
+    z-index: 900;
+}
+
+#padWrapperA{
+	z-index: 1000;
+    position: fixed;
+    top: -100%;
+    left: calc(50% - 300px);
+    transition : ease 0.5s;
+}
+
+#padWrapperB{
+	z-index: 1000;
+    position: fixed;
+    top: -150%;
+    left: calc(50% - 300px);
+    transition : ease 0.5s;
+}
+
+
+/* lee */
+.Lee-yellowBtn{
+	width: 70px;
+	height: 35px;
+	background: #ffcd20;
+	color: #333;
+	font-weight: 600;
+	border:0;
+	outline: 0;
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+.Lee-yellowBtnLong{
+	width: 120px;
+	height: 35px;
+	background: #ffcd20;
+	color: #333;
+	font-weight: 600;
+	border:0;
+	outline: 0;
+	border-radius: 4px;
+	margin-right: 5px;
+}
+
+#imgData{
+	
+}
+
+.input--text{
+   height: 34px;
+   padding: 0 12px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   box-sizing: border-box;
+   outline: none;
+   box-shadow: inset 0 1px 12px rgba(0, 0, 0, 0.075);
+   font-size: 16px;
+}
+
+.input--text:focus{
+    border-color: #51a7e8;
+    box-shadow: 0 0 5px rgba(81, 167, 232, 0.5),
+                inset 0 1px 12px rgba(0, 0, 0, 0.075);
+ }
+
+
+
+
+
+
+
+

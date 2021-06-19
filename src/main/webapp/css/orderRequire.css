@@ -1,0 +1,308 @@
+@charset "utf-8";
+/***************************************************************
+common(이명우)
+****************************************************************/
+body{
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.03em;
+}
+
+.active-white{
+    font-weight: 600 !important;
+    color: #fff !important;
+}
+
+.active-white-span{
+    color: #333 !important;
+    background: #fff !important;
+}
+
+.active-red{
+    border: 1px solid #d00000 !important;
+}
+
+.active-yellow{
+    background-color: #ffca11 !important;
+    border: 1px solid #ffc200 !important;
+    color: #212121 !important;
+    -webkit-box-shadow: 0 3px 2px -2px rgb(202 151 13 / 25%) !important;
+    box-shadow: 0 3px 2px -2px rgb(202 151 13 / 25%) !important;
+}
+
+/***************************************************************
+header (이명우)
+****************************************************************/
+.orderRequireHeader{
+    width: 100%;
+    padding: 10px;
+    height: 66px;
+    text-align: center;
+    background-color: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+.orderRequireHeader ul{
+    display: inline-flex;
+    justify-self: center;
+    align-items: center;
+    margin-top: 9px;
+}
+
+.orderRequireHeader ul li{
+    color: #757575;
+    margin-right: 50px;
+    position: relative;
+}
+
+.orderRequireHeader ul li:nth-child(1)::after{
+    font-family: FontAwesome;
+    content: "\f105";
+    position: absolute;
+    right: -28px;
+    font-size: 23px;
+}
+
+.orderRequireHeader ul li:nth-child(2)::after{
+    font-family: FontAwesome;
+    content: "\f105";
+    position: absolute;
+    right: -30px;
+    font-size: 23px;
+}
+
+.orderRequireHeader ul li span{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 23px;
+    width: 23px;
+    border-radius: 25px;
+    border: 1px solid #333;
+    margin-right: 3px;
+    background: #757575;
+    color: #333;
+}
+
+/***************************************************************
+visual (이명우)
+****************************************************************/
+.orderRequirVisual{
+    margin-top: 66px;
+    margin-bottom: 97px;
+    position: relative;
+    height: 100vh;
+    background: rgb(72,72,72);
+    padding-top: 15px;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper{
+    margin: 0 auto;
+    width: 336px;
+    padding: 12px;
+    background: #d2d2d2;
+    border-radius: 3px;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__infoBox{
+    background: #fff;
+    border-radius: 3px;
+    padding: 18px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__infoBox .closeBtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    color: #111;
+    cursor: pointer;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__infoBox h3{
+    color: rgb(41, 41, 41);
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 2px;
+}
+
+.orderRequirVisual__BoxWrapper__infoBox .infoBox__inputBox{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.orderRequirVisual__BoxWrapper__infoBox .infoBox__inputBox input{
+    height: 36px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background: #fff;
+    padding: 9px 11px 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.orderRequirVisual__BoxWrapper__infoBox .infoBox__inputBox span{
+    display: inline-block;
+    color: #d00000;
+    padding-left: 2px;
+    padding-top: 4px;
+    font-weight: 500;
+}
+
+.orderRequirVisual__BoxWrapper__infoBox .inforBox__groupBtn a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    padding: 9px 24px 11px;
+    width: 48%;
+    text-decoration: none;
+    color: #484848;
+    background: #f8f8f8;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid rgb(210, 210, 210);
+}
+
+.orderRequirVisual__BoxWrapper__infoBox .inforBox__groupBtn a:hover{
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.orderRequirVisual__BoxWrapper__infoBox .inforBox__groupBtn a:nth-child(1){
+    margin-right: 2%;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__addBox{
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    padding: 18px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__addBox:hover{
+    background: rgba(255, 255, 255, 0.5);
+    
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__addBox a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(158, 158, 158);
+    text-align: center;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__addBox a i{
+    font-size: 100px;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper__addBox a div{
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.orderRequirVisual .orderRequirVisual__BoxWrapper > div{
+    width: 312px;
+    height: 162px;
+}
+
+/***************************************************************
+footer (이명우)
+****************************************************************/
+footer{
+    height: 97px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background: #292929;
+}
+
+footer > div:nth-child(1){
+    height: 72px;
+    width: 100%;
+    padding: 12px 12px 25px;
+}
+
+footer > div:nth-child(1) a:nth-child(1){
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    background: #424242;
+    border-radius: 3px;
+    color: #BDBDBD;
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+footer > div:nth-child(1) a:nth-child(1) span::before{
+    font-family: FontAwesome;
+    content: "\f104";
+    position: absolute;
+    left: 50px;
+    top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer > div:nth-child(2){
+    height: 25px;
+    width: 100%;
+    border-top: 1px solid hsla(0,0%,100%,.05);
+}
+
+footer > div:nth-child(1) a:nth-child(2){
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    background: #fff;
+    border-radius: 3px;
+    color: #BDBDBD;
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+footer > div:nth-child(1) a:nth-child(2) span::after{
+    font-family: FontAwesome;
+    content: "\f105";
+    position: absolute;
+    right: 31px;
+    top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer > div:nth-child(2){
+    color: #9e9e9e;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/***************************************************************
+modal-orderRequireHeader Step-series (문서 업로드 모달)
+****************************************************************/
+
+
+
+

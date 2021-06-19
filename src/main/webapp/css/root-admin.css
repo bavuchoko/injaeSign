@@ -1,0 +1,118 @@
+
+@charset "UTF-8";
+/*================================================================
+# common
+=================================================================*/
+body{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #333;
+}
+
+/*================================================================
+# .root-admin-header
+=================================================================*/
+.root-admin-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    background: rgba(51, 51, 51, 0.9);
+}
+
+.root-admin-header h1{
+   color: rgba(255, 255, 255, 0.8);
+   font-size: 12px;
+}
+
+.root-admin-header h2{
+    font-size: 20px;
+    color: #ffcd20;
+    font-weight: 500;
+}
+
+.root-admin-header h3{
+    position: relative;
+}
+
+.root-admin-header h3::before{
+    content: "\f105";
+    font-family: FontAwesome;
+    position: relative;
+    left: 10px;
+    top: 1px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.root-admin-header h3 a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.root-admin-header ul{
+    display: none;
+}
+
+.root-admin-header ul li{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.root-admin-header ul li::before{
+    content: "\f105";
+    font-family: FontAwesome;
+    position: relative;
+    left: -8px;
+    top: 1px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.root-admin-header ul li a{
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+/*================================================================
+# .root-admin-visual
+=================================================================*/
+.root-admin-visual{
+    height: 100vh;
+    margin-left: 250px;
+    border: 1px solid green;
+    padding: 15px;
+    background: #f7f7f7;
+}
+
+.root-admin-visual h4{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.root-admin-visual table{
+    width: 100%;
+}
+
+.root-admin-visual table th{
+    height: 51px;
+    background: #f7f7f7;
+    vertical-align: middle;
+    border-top: 2px solid #747474;
+    border-bottom: 1px solid #747474;
+}
+
+.root-admin-visual table td{
+    height: 51px;
+    vertical-align: middle;
+    text-align: center;
+    border-bottom: 1px solid #747474;
+}
+
+

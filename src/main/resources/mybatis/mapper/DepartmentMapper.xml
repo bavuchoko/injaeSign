@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.example.demo.dao.department.DepartmentMapper">
+  
+	<select id="getDepartment" resultType="com.example.demo.vo.DepartmentVO">
+		select * from department
+	</select>
+	
+	<select id="getcrew" resultType="UserVO" parameterType="UserVO">
+      select a.s_num, a.name, b.department_code, a.grade, a.department_name from user as a, 
+      department as b where a.department_name = b.department_name and a.department_name = #{department_name} and a.name NOT IN (#{name})
+    </select>
+  
+  </mapper>

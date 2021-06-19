@@ -1,0 +1,797 @@
+/* common */
+.text-w450{
+    width: 450px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+}
+
+.text-w150{
+    width: 150px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+}
+
+.text-w100{
+    width: 100px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+}
+
+.text-w75{
+    width: 75px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+}
+
+.text-w50{
+    width: 50px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+}
+
+.text-w30{
+    width: 30px;
+    border: 1px solid #dbdbdb;
+    outline: none;
+}
+
+.inline-w50{
+    display: inline-block;
+    width: 50px;
+    text-indent: 0;
+}
+
+.inline-w120{
+    display: inline-block;
+    width: 120px;
+    text-indent: 0;
+}
+
+.con-title{
+    font-size: 23px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.con-description{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+.text-indent{
+    text-indent: 2em;
+}
+
+.border-outline-none{
+    border: 0;
+    outline: 0;
+}
+
+
+/* standard_labor_contract */
+.standard_labor_contract {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1154px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    overflow:scroll;
+    padding-left:10px;
+}
+
+/* Collection_of_personal_information_contract */
+.Collection_of_personal_information_contract{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1154px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+/* Letter_Of_Approval_contract */
+.Letter_Of_Approval_contract{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1000px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+.Resignation_contract{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1154px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+/* standard_labor_contract Detail*/
+.standard_labor_contract > div:first-child{
+    text-align: center;
+}
+
+.standard_labor_contract > div{
+    margin-top: 40px;
+}
+
+.standard_labor_contract > div:first-child{
+    margin-top: 0;
+}
+
+.standard_labor_contract > div h4{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.standard_labor_contract > div:first-child h1{
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.standard_labor_contract > div:first-child span{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: gray;
+}
+
+.standard_labor_contract > div:nth-child(2){
+    margin-top: 30px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 1.5px;
+}
+
+.standard_labor_contract .signBox{
+    position: relative;
+}
+
+.standard_labor_contract .signBox img{
+    width: 70px;
+    height: 50px;
+    position: absolute;
+    bottom: -13px;
+    right: 15px;
+    z-index: 10;
+}
+
+/* Collection_of_personal_information_contract Detail */
+.Collection_of_personal_information_contract table th, td{
+    text-align: center;
+}
+
+.Collection_of_personal_information_contract table input{
+    height: 100%;
+    outline: 0;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(1) {
+    height: 40px;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(2) {
+    height: 40px;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(3) {
+    height: 40px;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(4) {
+    height: 40px;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(5) {
+    height: 40px;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(6) {
+    height: 40px;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(4) input{
+    text-align: right;
+}
+
+.Collection_of_personal_information_contract table tr:nth-child(5) input{
+    text-align: right;
+}
+
+.Collection_of_personal_information_contract .table-body td div:first-child{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.Collection_of_personal_information_contract .table-body td div:nth-child(2){
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Collection_of_personal_information_contract .table-body td div:nth-child(3){
+    text-align: center;
+    margin-top: 70px;
+}
+
+.Collection_of_personal_information_contract .table-body td div:nth-child(4){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_personal_information_contract .table-body td div:nth-child(5){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_personal_information_contract .table-body .signBox{
+    position: relative;
+    display: inline-block;
+    padding-left: 58px;
+}
+
+.Collection_of_personal_information_contract .table-body .signBox img{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    bottom: 65px;
+    right: -23px;
+    z-index: 10;
+}
+
+/* Letter_Of_Approval_contract Detail*/
+.Letter_Of_Approval_contract table.tableFirst{
+    width: 100%;
+}
+
+.Letter_Of_Approval_contract table.tableFirst tr:nth-child(1){
+    height: 40px;
+}
+.Letter_Of_Approval_contract table.tableFirst tr:nth-child(2){
+    height: 40px;
+}
+.Letter_Of_Approval_contract table.tableFirst tr:nth-child(3){
+    height: 40px;
+}
+
+.Letter_Of_Approval_contract table.tableSecond{
+    width: 100%;
+}
+
+.Letter_Of_Approval_contract table.tableSecond tr:nth-child(1){
+    height: 110px;
+}
+
+.Letter_Of_Approval_contract table.tableSecond tr:nth-child(1) textarea{
+    width: 100% !important;
+    height: 110px !important;
+    resize: none;
+    border: 0;
+    outline: 0;
+}
+
+.Letter_Of_Approval_contract table.tableSecond tr:nth-child(2){
+    height: 40px;
+}
+
+.Letter_Of_Approval_contract table.tableSecond tr:nth-child(3){
+    height: 40px;
+}
+
+.Letter_Of_Approval_contract .signBox{
+    position: relative;
+}
+
+.Letter_Of_Approval_contract .signBox img{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    bottom: -15px;
+    right: -25px;
+    z-index: 10;
+}
+
+/* Resignation_contract Detail */
+.Resignation_contract table tr:nth-child(1){
+    height: 40px;
+}
+
+.Resignation_contract table tr:nth-child(2){
+    height: 40px;
+}
+
+.Resignation_contract table tr:nth-child(3){
+    height: 40px;
+}
+
+.Resignation_contract table tr:nth-child(4){
+    height: 40px;
+}
+
+.Resignation_contract table tr:nth-child(5){
+    height: 500px;
+}
+
+/* 理쒖쁺�젣 �닔�젙 */
+/* Collection_of_business_trip_report */
+.Collection_of_business_trip_report{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1154px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+/* Collection_of_business_trip_report */
+.Collection_of_business_trip_report table th, td{
+    text-align: center;
+}
+
+.Collection_of_business_trip_report table input{
+    height: 100%;
+    outline: 0;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(1) {
+    height: 40px;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(2) {
+    height: 40px;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(3) {
+    height: 40px;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(4) {
+    height: 40px;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(5) {
+    height: 40px;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(6) {
+    height: 40px;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(4) input{
+    text-align: right;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(5) input{
+    text-align: right;
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_business_trip_report table tr:nth-child(6) textarea{
+    width:100%;
+	text-align : left;
+	height : 100px;
+	resize : none;
+	overflow : hidden;
+}
+
+.Collection_of_business_trip_report .table-body td div:first-child{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.Collection_of_business_trip_report .table-body td div:nth-child(2){
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Collection_of_business_trip_report .table-body td div:nth-child(2) input{
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_business_trip_report .table-body td div:nth-child(3){
+    text-align: center;
+    margin-top: 70px;
+}
+
+.Collection_of_business_trip_report .table-body td div:nth-child(4){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_business_trip_report .table-body td div:nth-child(5){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_business_trip_report .table-body .signBox{
+    position: relative;
+    display: inline-block;
+    padding-left: 58px;
+}
+
+.Collection_of_business_trip_report .table-body .signBox img{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    bottom: 65px;
+    right: -23px;
+    z-index: 10;
+}
+
+/* Collection_of_expenditure_resolution */
+.Collection_of_expenditure_resolution{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1154px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+/* Collection_of_expenditure_resolution */
+.Collection_of_expenditure_resolution table th, td{
+    text-align: center;
+}
+
+.Collection_of_expenditure_resolution table input{
+    height: 100%;
+    outline: 0;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(1) {
+    height: 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(2) {
+    height: 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(3) {
+    height: 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(4) {
+    height: 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(5) {
+    height: 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(6) {
+    height: 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(3) input{
+    text-align: right;
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(4) input{
+    text-align: right;
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(5) input{
+    text-align: right;
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(6) input{
+    width:100%;
+	text-align : left;
+	height : 40px;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(7) input{
+    width:100%;
+	height : 40px;
+	width : 100%;
+	text-align : center;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(8) input{
+    width:100%;
+	height : 40px;
+	width : 100%;
+	text-align : center;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(9) input{
+    width:100%;
+	height : 40px;
+	width : 100%;
+	text-align : center;
+}
+
+.Collection_of_expenditure_resolution table tr:nth-child(10) input{
+    width:100%;
+	height : 40px;
+	width : 100%;
+	text-align : center;
+}
+
+.Collection_of_expenditure_resolution .table-body td div:first-child{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.Collection_of_expenditure_resolution .table-body td div:nth-child(2){
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Collection_of_expenditure_resolution .table-body td div:nth-child(2) input{
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_expenditure_resolution .table-body td div:nth-child(3){
+    text-align: center;
+    margin-top: 70px;
+}
+
+.Collection_of_expenditure_resolution .table-body td div:nth-child(4){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_expenditure_resolution .table-body td div:nth-child(5){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_expenditure_resolution .table-body .signBox{
+    position: relative;
+    display: inline-block;
+    padding-left: 58px;
+}
+
+.Collection_of_expenditure_resolution .table-body .signBox img{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    bottom: 65px;
+    right: -23px;
+    z-index: 10;
+}
+
+/* Collection_of_certificate_of_experience */
+.Collection_of_certificate_of_experience{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 1154px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+/* Collection_of_certificate_of_experience */
+.Collection_of_certificate_of_experience table th, td{
+    text-align: center;
+}
+
+.Collection_of_certificate_of_experience table input{
+    height: 100%;
+    outline: 0;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(1) {
+    height: 40px;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(2) {
+    height: 40px;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(3) {
+    height: 40px;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(4) {
+    height: 40px;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(5) {
+    height: 40px;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(6) {
+    height: 40px;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(4) input{
+    text-align: right;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(5) input{
+    text-align: right;
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_certificate_of_experience table tr:nth-child(6) textarea{
+    width:100%;
+	text-align : left;
+	height : 100px;
+	resize : none;
+	overflow : hidden;
+}
+
+.Collection_of_certificate_of_experience .table-body td div:first-child{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.Collection_of_certificate_of_experience .table-body td div:nth-child(2){
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Collection_of_certificate_of_experience .table-body td div:nth-child(2) input{
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_certificate_of_experience .table-body td div:nth-child(3){
+    text-align: center;
+    margin-top: 70px;
+}
+
+.Collection_of_certificate_of_experience .table-body td div:nth-child(4){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_certificate_of_experience .table-body td div:nth-child(5){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_certificate_of_experience .table-body .signBox{
+    position: relative;
+    display: inline-block;
+    padding-left: 58px;
+}
+
+.Collection_of_certificate_of_experience .table-body .signBox img{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    bottom: 65px;
+    right: -23px;
+    z-index: 10;
+}
+
+/* Collection_of_vacation_application */
+.Collection_of_vacation_application{
+    padding: 90px 100px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 816px;
+    height: 900px;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+}
+
+/* Collection_of_vacation_application */
+.Collection_of_vacation_application table th, td{
+    text-align: center;
+}
+
+.Collection_of_vacation_application table input{
+    height: 100%;
+    outline: 0;
+}
+
+.Collection_of_vacation_application table tr:nth-child(1) {
+    height: 40px;
+}
+
+.Collection_of_vacation_application table tr:nth-child(2) {
+    height: 40px;
+}
+
+.Collection_of_vacation_application table tr:nth-child(3) {
+    height: 40px;
+}
+
+.Collection_of_vacation_application table tr:nth-child(4) {
+    height: 40px;
+}
+
+.Collection_of_vacation_application table tr:nth-child(5) {
+    height: 40px;
+}
+
+.Collection_of_vacation_application table tr:nth-child(6) {
+    height: 40px;
+}
+
+.Collection_of_vacation_application table tr:nth-child(4) input{
+    text-align: right;
+}
+
+.Collection_of_vacation_application table tr:nth-child(5) input{
+    text-align: right;
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_vacation_application table tr:nth-child(6) textarea{
+    width:100%;
+	text-align : left;
+	height : 100px;
+	resize : none;
+	overflow : hidden;
+}
+
+.Collection_of_vacation_application .table-body td div:first-child{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.Collection_of_vacation_application .table-body td div:nth-child(2){
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Collection_of_vacation_application .table-body td div:nth-child(2) input{
+	border-bottom : 1px solid #dbdbdb;
+}
+
+.Collection_of_vacation_application .table-body td div:nth-child(3){
+    text-align: center;
+    margin-top: 70px;
+}
+
+.Collection_of_vacation_application .table-body td div:nth-child(4){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_vacation_application .table-body td div:nth-child(5){
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Collection_of_vacation_application .table-body .signBox{
+    position: relative;
+    display: inline-block;
+    padding-left: 58px;
+}
+
+.Collection_of_vacation_application .table-body .signBox img{
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    bottom: 65px;
+    right: -23px;
+    z-index: 10;
+}
+
+
+

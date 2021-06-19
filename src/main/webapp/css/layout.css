@@ -1,0 +1,13 @@
+.nav{
+    position: fixed;
+    border: 1px solid red;
+    height: 100vh;
+    width: 20%;
+}
+
+.visual{
+    margin-left: 20%;
+    border: 1px solid green;
+    width: 80%;
+    height: 1000px;
+}

@@ -1,0 +1,249 @@
+@charset "utf-8";
+/***************************************************************
+common(이명우)
+****************************************************************/
+.active-arrow{
+    color: #212121 !important;
+    font-weight: 700 !important;
+    position: relative;
+}
+
+.active-arrow::before{
+    font-family: FontAwesome;
+    content: "\f105";
+    font-size: 30px;
+    position: absolute;
+    left: -20px;
+    top: -10px;
+    color: #ffca11;
+}
+
+.active-yellow{
+    background-color: #ffca11 !important;
+    border: 1px solid #ffc200 !important;
+    color: #212121 !important;
+    -webkit-box-shadow: 0 3px 2px -2px rgb(202 151 13 / 25%) !important;
+    box-shadow: 0 3px 2px -2px rgb(202 151 13 / 25%) !important;
+}
+/***************************************************************
+modal-uploadContract-wrapper (문서 업로드 모달)
+****************************************************************/
+.modal-uploadContract-wrapper{
+    position: fixed;
+    top:0; left: 0; bottom: 0; right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}
+
+.modal-uploadContract-content{
+    position: fixed;
+    width: 676px;
+    height: 502px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+
+.modal-uploadContract-content__header{
+    position: relative;
+    width: 100%;
+    height: 14%;
+    background: #f8f8f8;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 20px 18px 6px;
+}
+
+.modal-uploadContract-content__header .title-uploadContract{
+    color: #616161;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.modal-uploadContract-content__header .btnClose-uploadContract{
+    position: absolute;
+    top:45%;
+    transform: translate(0, -50%);
+    right:20px;
+    color: rgb(189, 189, 189);
+    font-size: 25px;
+}
+
+.modal-uploadContract-content__flexWrapper{
+    display: flex;
+    height: 72%;
+}
+
+.modal-uploadContract-content__side{
+    flex: 1;
+    height: 100%;
+    border-right: 1px solid #dbdbdb;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.modal-uploadContract-content__side ul{
+    list-style: none;
+    width: 100%;
+}
+
+.modal-uploadContract-content__side li{
+    text-align: right;
+    padding: 12px 24px;
+    width: 100%;
+}
+
+.modal-uploadContract-content__side li a{
+    color: #757575;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.modal-uploadContract-content__visual{
+    flex: 3;
+    height: 100%;
+    position: relative;
+}
+
+.modal-uploadContract-content__visual embed{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+
+.modal-uploadContract-content__footer{
+    border-top: 1px solid #dbdbdb;
+    width: 100%;
+    height: 14%;
+    text-align: right;
+    background: #f8f8f8;
+}
+
+.modal-uploadContract-content__footer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 42px;
+    border: 1px solid;
+    color: #e4e4e4;
+    background-color: #f8f8f8;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/***************************************************************
+modal-uploadConfirm-wrapper (서명요청, 시작하기)
+****************************************************************/
+.modal-uploadConfirm-wrapper{
+    position: fixed;
+    top:0; left: 0; bottom: 0; right: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 9999;
+    display: none;
+}
+
+.modal-uploadConfirm-content{
+    position: fixed;
+    width: 426px;
+    height: 476px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 36px;
+    background: #fff;
+}
+
+.modal-uploadConfirm-content > div:nth-child(1){
+    text-align: center;
+}
+
+.modal-uploadConfirm-content > div:nth-child(1) img{
+    width: 243px;
+    height: 133px;
+}
+
+.modal-uploadConfirm-content > div:nth-child(2){
+    text-align: center;
+}
+
+.modal-uploadConfirm-content > div:nth-child(2) h3{
+    font-size: 22px;
+    color: #292929;
+}
+
+.modal-uploadConfirm-content > div:nth-child(3){
+    border: 1px solid #dbdbdb;
+    height: 47px;
+    padding: 12px 0;
+    text-align: center;
+    margin-top: 25px
+}
+
+.modal-uploadConfirm-content > div:nth-child(4){
+    border: 1px solid #dbdbdb;
+    height: 80px;
+    padding: 12px 0;
+    text-align: center;
+    margin-top: 15px;
+    background: #f8f8f8;
+}
+
+.modal-uploadConfirm-content > div:nth-child(4) p{
+    color: #292929;
+    font-weight: 600;
+    position: relative;
+    width: 270px;
+    text-align: left;
+    margin-left: 60px;
+    font-size:13px;
+}
+
+.modal-uploadConfirm-content > div:nth-child(4) p::before{
+    font-family: FontAwesome;
+    content: "\f00c";
+    font-size: 20px;
+    position: absolute;
+    left: -35px;
+    top: -5px;
+    color: #ffca11;
+}
+
+.modal-uploadConfirm-content > div:nth-child(5){
+    margin-top: 25px;
+    text-align: center;
+}
+
+.modal-uploadConfirm-content > div:nth-child(5) a:nth-child(1){
+    width: 100px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    color: #292929;
+    margin-right: 5px;
+    background: #f8f8f8;
+    border-radius: 3px;
+}
+
+.modal-uploadConfirm-content > div:nth-child(5) a:nth-child(2){
+    width: 160px;
+    height: 45px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    color: #292929;
+    margin-right: 15px;
+    background: #ffca11;
+    border-radius: 3px;
+}

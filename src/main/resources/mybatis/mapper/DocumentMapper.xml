@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.example.demo.dao.document.DocumentMapper">
+
+
+	<insert id="insertDocument" parameterType="DocVO">
+		insert into document (d_num, s_num, grade, title, d_code, status, department_name)
+		values(#{d_num},#{s_num},#{grade},#{title}, #{d_code}, 1,#{department_name})
+	</insert>
+
+
+	<resultMap type="DocVO" id="getDocMap">
+		<id property="d_num" column="d_num"/>
+		<result property="d_num" column="d_num"/>
+		<result property="s_num" column="s_num"/>
+		<result property="status" column="status"/>
+		<result property="grade" column="grade"/>
+		<result property="department_name" column="department_name"/>
+		<result property="title" column="title"/>
+		<result property="d_name" column="d_name"/>
+		<result property="image" column="image"/>
+		
+		<result property="files" column="files"/>
+		
+		<result property="nextap" column="nextap"/>
+		<result property="name" column="name"/>
+		<result property="end_date" column="end_date"/>
+		<result property="d_code" column="d_code"/>
+		<result property="content" column="content"/>
+		<result property="reg_date" column="reg_date"/>
+		<collection property="process_line" resultMap="getprocessline"></collection>
+		<collection property="users" resultMap="getUsers"></collection>
+	</resultMap>
+
+	<resultMap type="PlVO" id="getprocessline">
+		<result property="d_num" column="d_num"/>
+		<result property="s_num" column="ps_num"/>
+		<result property="orders" column="orders"/>
+		<result property="confirm_date" column="confirm_date"/>
+		<result property="p_name" column="p_name"/>
+		<result property="p_image" column="p_image"/>
+		<result property="p_grade" column="p_grade"/>
+		<result property="signiture" column="signiture"/>
+
+
+	</resultMap>
+
+	<resultMap type="UserVO" id="getUsers">
+		<result property="s_num" column="ps_num"/>
+		<result property="pw" column="pw"/>
+		<result property="name" column="name"/>
+		<result property="grade" column="grase"/>
+		<result property="reg_date" column="reg_date"/>
+		<result property="image" column="image"/>
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+		<result property="zip_code" column="zip_code"/>
+		<result property="address" column="address"/>
+		<result property="brith" column="birth"/>
+		<result property="department_name" column="department_name"/>
+		<result property="useyn" column="useyn"/>
+		<result property="u_image" column="u_image"/>
+		<result property="u_name" column="u_name"/>
+		<result property="u_department" column="u_department"/>
+		<result property="u_grade" column="u_grade"/>
+		<result property="u_status" column="u_status"/>
+
+	</resultMap>
+	<select id="getIfiYet" resultType="_int">
+		select s_num from nextap where d_num=#{d_num}
+	</select>
+
+	<!-- 미결함 d_num들-->
+	<select id="getYetNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from nextap where s_num = #{s_num}
+	</select>
+	<!-- 문서 d_num들-->
+	<select id="getDocumentNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from document where s_num = #{s_num}
+	</select>
+
+	<!-- 진행중 목록 -->
+	<select id="getProcessubgNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from process_line where s_num = #{s_num}
+	</select>
+
+	<!-- 반려함 d_num들-->
+	<select id="getRejectNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from process_line where s_num = #{s_num} and status=4
+	</select>
+
+	<!-- 내결재목록 d_num들-->
+	<select id="getIconfirmNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from process_line where s_num = #{s_num} and status=3
+	</select>
+
+	<!-- 완료함 d_num들-->
+	<select id="getDoneNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from process_line where s_num = #{s_num}
+	</select>
+
+	<!-- 내 기안 d_num들-->
+	<select id="getMyDocNumber" parameterType="UserVO" resultType="DocVO">
+		select d_num from document where s_num = #{s_num} and status !=7
+	</select>
+
+	<!--내가 기안한 진행함-->
+	<select id="getMyDocumentList" parameterType="java.util.List" resultMap="getDocMap">
+		SELECT   a.d_num,  a.s_num, b.s_num as ps_num, a.status, u.image, ub.image as u_image, a.grade, 
+		a.department_name, u.name, b.confirm_date as end_date, b.status as u_status,
+	a.title, t.d_name, a.reg_date, c.content, f.file_name as files, bu.signiture,
+	ub.name as p_name, ub.email, ub.name as u_name, 
+	ub.department_name as u_department, ub.grade as u_grade
+		FROM  document as a
+		LEFT JOIN process_line as b on b.d_num = a.d_num
+		LEFT JOIN document_content as c on a.d_num = c.d_num
+		LEFT JOIN files as f on a.d_num = f.d_num
+		LEFT JOIN user as u on u.s_num = a.s_num
+		LEFT JOIN user as ub on ub.s_num = b.s_num
+		LEFT JOIN process_line as bu on bu.s_num = u.s_num
+		LEFT JOIN document_type as t on t.d_code = a.d_code
+		where a.d_num in
+		<foreach collection="doca" item="list" index="idx" open="(" close=")" separator=",">
+			#{list.d_num}
+		</foreach>
+	</select>
+
+	<!-- 진행테이블에 포함된 진행함 -->
+	<select id="getDocumentList" parameterType="java.util.List"  resultMap="getDocMap">
+		SELECT   a.d_num, a.d_code, a.s_num, b.s_num as ps_num, a.status, u.image, a.grade, a.department_name, u.name, b.confirm_date as end_date, b.status as u_status,ub.image as u_image,
+		a.title, t.d_name, a.reg_date, c.content, f.file_name as files, ub.name as p_name, ub.email, ub.name as u_name, ub.department_name as u_department, ub.grade as u_grade, bu.signiture
+		FROM  document as a
+		LEFT JOIN process_line as b on b.d_num = a.d_num
+		LEFT JOIN document_content as c on a.d_num = c.d_num
+		LEFT JOIN files as f on a.d_num = f.d_num
+		LEFT JOIN user as u on u.s_num = a.s_num
+		LEFT JOIN user as ub on ub.s_num = b.s_num
+		LEFT JOIN process_line as bu on bu.s_num = u.s_num
+		LEFT JOIN document_type as t on t.d_code = a.d_code
+		where a.status= 1 and a.d_num in
+		<foreach collection="doca" item="list" index="idx" open="(" close=")" separator=",">
+			#{list.d_num}
+		</foreach>
+	</select>
+
+	<!--개별문서-->
+	<select id="getDocument" resultMap="getDocMap" parameterType="DocVO">
+		SELECT   a.d_num,  a.s_num, b.s_num as ps_num, a.status, u.image, 
+		a.grade, a.department_name, u.name, b.confirm_date as end_date, 
+		b.status as u_status,ub.image as u_image, a.title, a.d_code, 
+		a.reg_date, c.content, f.file_name as files, ub.name as p_name, 
+		u.email, ub.name as u_name, ub.department_name as u_department,
+		ub.grade as u_grade, b.signiture, ub.department_name as p_department,
+		ub.grade as p_grade, ub.s_num as p_s_num
+		FROM  document as a
+		  	LEFT JOIN process_line as b on b.d_num = a.d_num
+		  	LEFT JOIN document_content as c on a.d_num = c.d_num
+		    LEFT JOIN files as f on a.d_num = f.d_num
+		  	LEFT JOIN user as u on u.s_num = a.s_num
+		  	LEFT JOIN user as ub on ub.s_num = b.s_num
+		  	LEFT JOIN process_line as p on p.s_num = u.s_num
+		 	LEFT JOIN document_type as t on t.d_code = a.d_code
+		 	LEFT JOIN sign as g on g.s_num = b.s_num
+		where a.d_num =#{d_num}
+	</select>
+
+
+	<!-- 미결함 -->
+	<select id="getYetList" parameterType="java.util.List"  resultMap="getDocMap">
+		SELECT   a.d_num,  a.s_num, b.s_num as ps_num, a.status, u.image, a.grade, a.department_name, u.name, b.confirm_date as end_date, b.status as u_status,ub.image as u_image,
+		a.title, a.d_code, a.reg_date, c.content, f.file_name as files, ub.name as p_name, ub.email, ub.name as u_name, ub.department_name as u_department, ub.grade as u_grade
+		FROM  document as a
+		LEFT JOIN process_line as b on b.d_num = a.d_num
+		LEFT JOIN document_content as c on a.d_num = c.d_num
+		LEFT JOIN files as f on a.d_num = f.d_num
+		LEFT JOIN user as u on u.s_num = a.s_num
+		LEFT JOIN user as ub on ub.s_num = b.s_num
+		LEFT JOIN process_line as bu on bu.s_num = u.s_num
+		LEFT JOIN document_type as t on t.d_code = a.d_code
+		where a.d_num in
+		<foreach collection="doca" item="list" index="idx" open="(" close=")" separator=",">
+			#{list.d_num}
+		</foreach>
+	</select>
+
+
+	<!-- 반려함 목록 -->
+	<select id="getRejectList" parameterType="java.util.List"   resultMap="getDocMap">
+		SELECT   a.d_num,  a.s_num, b.s_num as ps_num, a.status, u.image, a.grade, a.department_name, u.name, b.confirm_date as end_date, b.status as u_status,ub.image as u_image,
+		a.title, a.d_code, a.reg_date, c.content, f.file_name as files, ub.name as p_name, ub.email, ub.name as u_name, ub.department_name as u_department, ub.grade as u_grade
+		FROM  document as a
+		LEFT JOIN process_line as b on b.d_num = a.d_num
+		LEFT JOIN document_content as c on a.d_num = c.d_num
+		LEFT JOIN files as f on a.d_num = f.d_num
+		LEFT JOIN user as u on u.s_num = a.s_num
+		LEFT JOIN user as ub on ub.s_num = b.s_num
+		LEFT JOIN process_line as bu on bu.s_num = u.s_num
+		LEFT JOIN document_type as t on t.d_code = a.d_code
+		where a.d_num in
+		<foreach collection="doca" item="list" index="idx" open="(" close=")" separator=",">
+			#{list.d_num}
+		</foreach>
+	</select>
+
+	<!-- 내 결제함 목록 -->
+	<select id="getIconfirmList" parameterType="java.util.List"   resultMap="getDocMap">
+		SELECT   a.d_num,  a.s_num, b.s_num as ps_num, a.status, u.image, a.grade, a.department_name, u.name, b.confirm_date as end_date, b.status as u_status,ub.image as u_image,
+		a.title, a.d_code, a.reg_date, c.content, f.file_name as files, ub.name as p_name, ub.email, ub.name as u_name, ub.department_name as u_department, ub.grade as u_grade
+		FROM  document as a
+		LEFT JOIN process_line as b on b.d_num = a.d_num
+		LEFT JOIN document_content as c on a.d_num = c.d_num
+		LEFT JOIN files as f on a.d_num = f.d_num
+		LEFT JOIN user as u on u.s_num = a.s_num
+		LEFT JOIN user as ub on ub.s_num = b.s_num
+		LEFT JOIN process_line as bu on bu.s_num = u.s_num
+		LEFT JOIN document_type as t on t.d_code = a.d_code
+		where a.d_num in
+		<foreach collection="doca" item="list" index="idx" open="(" close=")" separator=",">
+			#{list.d_num}
+		</foreach>
+	</select>
+
+	<!-- 완료함 목록 -->
+	<select id="getDoneList" parameterType="java.util.List"   resultMap="getDocMap">
+		SELECT   a.d_num,  a.s_num, b.s_num as ps_num, a.status, u.image, a.grade, a.department_name, u.name, b.confirm_date as end_date, b.status as u_status,ub.image as u_image,
+		a.title, a.d_code, a.reg_date, c.content, f.file_name as files, ub.name as p_name, ub.email, ub.name as u_name, ub.department_name as u_department, ub.grade as u_grade
+		FROM  document as a
+		LEFT JOIN process_line as b on b.d_num = a.d_num
+		LEFT JOIN document_content as c on a.d_num = c.d_num
+		LEFT JOIN files as f on a.d_num = f.d_num
+		LEFT JOIN user as u on u.s_num = a.s_num
+		LEFT JOIN user as ub on ub.s_num = b.s_num
+		LEFT JOIN process_line as bu on bu.s_num = u.s_num
+		LEFT JOIN document_type as t on t.d_code = a.d_code
+		where a.status =7 and a.d_num in
+		<foreach collection="doca" item="list" index="idx" open="(" close=")" separator=",">
+			#{list.d_num}
+		</foreach>
+	</select>
+
+
+
+	<!-- 기안시 다음 기안 -->
+	<insert id="insertNext" parameterType="DocVO">
+		insert into nextap (d_num, s_num) values (#{d_num}, #{nextap})
+	</insert>
+
+	<!-- 승인하기 -->
+	<update id="approve" parameterType="PlVO">
+	<![CDATA[
+		update nextap set s_num = (select s_num from process_line where d_num = #{d_num} and orders >
+	  		(select orders from process_line where s_num = #{s_num} and d_num = #{d_num}) order by orders desc limit 1)
+		where d_num =#{d_num};
+	]]>
+	</update>
+
+	<!-- 반려하기 -->
+	<update id="reject" parameterType="PlVO">
+	<![CDATA[
+		update nextap set s_num = (select s_num from process_line where d_num = #{d_num} and orders <
+			 (select orders from process_line where s_num = #{s_num} and d_num = #{d_num}) order by orders desc limit 1)
+		where d_num =#{d_num};
+	]]>
+	</update>
+
+	<!-- 반려하기 -->
+	<update id="rejectEnd" parameterType="PlVO">
+		<![CDATA[
+		update nextap set s_num = -1
+		where d_num =#{d_num};
+	]]>
+	</update>
+
+    <!-- 기안시 결제라인 입력 -->
+	<insert id="insertProcessLine" parameterType="java.util.List">
+		insert into process_line (d_num, s_num, orders, status) values
+		<foreach collection="pva" item="list" index="idx" separator=",">
+			(#{list.d_num},#{list.s_num},#{list.orders}, 8)
+		</foreach>
+	</insert>
+
+	<!-- 문서 결재 진행시 결제라인 테이블 변경 -->
+	<update id="modifyProcessLine" parameterType="PlVO">
+		update process_line
+		<if test = 'sign == "approve"'>
+			<![CDATA[
+			set status =3, confirm_date = sysdate(), signiture = #{signiture} where d_num = #{d_num} and s_num = #{s_num}
+			]]>
+		</if>
+		<if test = 'sign == "reject"'>
+			<![CDATA[
+		     set status = case when
+		     	    (d_num= 0 and orders < (select orders from process_line where d_num=#{d_num} and s_num=#{s_num})) then 8
+		     when (d_num= #{d_num} and orders = (select orders from process_line where d_num=#{d_num} and s_num=#{s_num})) then 4 else status end
+			]]>
+		</if>
+	</update>
+
+	<!-- 기안시 문서 컨텐츠 입력 -->
+	<insert id="insertContent" parameterType="DocVO">
+		insert into document_content (d_num, content) values(#{d_num},#{content})
+	</insert>
+
+	<!-- 기안시 파일테이블에 파일 이름 입력 -->
+	<insert id="insertFileToDb" parameterType="DocVO">
+		insert into files (d_num, file_name) values (#{d_num}, #{files})
+	</insert>
+
+
+	<!-- 문서 테이블 행 수 구하기 : db입력전에 d_num 생성하기 위해 d_num의 최대값을 구하는데 문서가 하나도 없을때 에러를 방지하기 위해 필요한 체크값-->
+	<select id="checkDCount" resultType="_int">
+		select count(*) from document
+	</select>
+
+	<!-- 문서테이블에 d_num의 가장 큰값을 구해서 service에서 +1 시켜준단단-->
+	<select id="getHighestDocNum" resultType="_int">
+		select d_num from document order by d_num desc limit 1
+	</select>
+
+	<update id="updateContent" parameterType="DocVO">
+		update document_content set content = #{content}
+	</update>
+
+	<update id="updateDoc" parameterType="DocVO">
+		update document set title = #{title}
+	</update>
+
+	<select id="getUserOrders" parameterType="PlVO" resultType="_int">
+		select orders from process_line where d_num = #{d_num} and s_num = #{s_num}
+	</select>
+
+	<select id="getHighestOrders" parameterType="DocVO" resultType="_int">
+		select orders from process_line where d_num = #{d_num} order by orders desc limit 1
+	</select>
+
+	<update id="setDocumentDone" parameterType="DocVO">
+		update document set status =7 where d_num = #{d_num}
+	</update>
+
+	<update id="finalApprove" parameterType="PlVO">
+		update nextap set s_num = -1 where d_num=#{d_num}
+	</update>
+	
+	<select id="getSigniture" parameterType="DocVO" resultType="_int">
+		select count(case when stamp != 1 then 0 end) from sign where s_num = #{s_num}
+	</select>
+
+    <select id="getDocSign">
+      select sign from process_line where s_num = #{s_num} and signiture = #{signiture}
+    </select>
+
+    <select id="getDocStamp">
+      select stamp from process_line where s_num = #{s_num} and signiture = #{signiture}
+    </select>
+
+    <update id="insertSign" parameterType="PlVO">
+    	update process_line set signiture = #{signiture} where s_num = #{s_num} and d_num = #{d_num}
+    </update>
+	<select id="checkUserStamp" parameterType="PlVO" resultType="_int">
+		select count(stamp) from sign where s_num = #{s_num}
+	</select>
+<select id="getUserAlreadyDoCount" parameterType="PlVO" resultType="_int">
+	select count(*) from document where d_num=#{d_num} and s_num =#{s_num}
+</select>
+
+	<select id="getUserAlreadyDo" parameterType="PlVO" resultType="Integer">
+		select status from process_line where d_num =#{d_num} and s_num = #{s_num}
+	</select>
+</mapper>

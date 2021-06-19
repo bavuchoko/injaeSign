@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.dao.notice.NoticeMapper">
+
+	<sql id="abcd">
+		<trim prefix="(" suffix=") and" prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">A.title like CONCAT('%',#{word},'%')</when>
+						<when test="type == 'C'.toString()">A.content like CONCAT('%',#{word},'%')</when>
+						<when test="type == 'W'.toString()">B.name like CONCAT('%',#{word},'%')</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<select id="getMainList" resultType="NoticeVO">
+		<![CDATA[
+			select * from (select A.*, B.name from notice A, user B where 
+		]]>
+		<include refid="abcd" />
+		<![CDATA[
+			(A.s_num = B.s_num) order by n_num desc limit #{edcount}) as C limit #{stcount}, #{edcount}
+		]]>
+	</select>
+	
+	<insert id="getInsert" parameterType="NoticeVO">
+		insert into notice (title, content, file, s_num) values(#{title}, #{content}, #{file}, #{s_num})
+	</insert>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from notice A, user B where <include refid="abcd" /> (A.s_num = B.s_num)
+	</select>
+	
+	<select id="getView" resultType="NoticeVO">
+		select A.*, B.name from notice A join user B on A.s_num = B.s_num where n_num = #{n_num}
+	</select>
+
+	<update id="plusCount">
+		update notice set view_count = view_count+1 where n_num = #{n_num}
+	</update>
+
+	<delete id="getDelete">
+		delete from notice where n_num = #{n_num}
+	</delete>
+
+	<update id="UpdatePro">
+		update notice set title = #{title}, content = #{content}, file = #{file} where n_num = #{n_num}
+	</update>
+	
+	<select id="fileInfo">
+		select file from notice where n_num = #{n_num}
+	</select>
+	
+</mapper>
